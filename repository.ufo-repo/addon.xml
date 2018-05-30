@@ -4,9 +4,9 @@
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
         <extension point="xbmc.addon.repository" name="UFO">
-            <info compressed="false">https://raw.githubusercontent.com/krazware/therealufo/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/krazware/therealufo/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/krazware/therealufo/zips</datadir>
+            <info compressed="false">https://raw.githubusercontent.com/krazware/therealufo/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/krazware/therealufo/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/krazware/therealufo/master/zips</datadir>
             <hashes>false</hashes>
         </extension>
         <extension point="xbmc.addon.metadata">
