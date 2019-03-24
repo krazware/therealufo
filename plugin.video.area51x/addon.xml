@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.area51x" name="[COLOR green]Area 51 X[/COLOR]" version="7.000.001" provider-name="Ragnor">
+<addon id="plugin.video.area51x" name="[COLOR green]Area 51 X[/COLOR]" version="8.000.000" provider-name="@Nemzzy668 / Kong">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.addon.common" version="2.0.0" />
+    <import addon="pvr.iptvsimple" />
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
