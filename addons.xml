@@ -2,7 +2,7 @@
 <addons>
 <addon id="plugin.video.area51"
        name="[COLOR lightgreen]Area-51 IPTV[/COLOR]"
-       version="2.1"
+       version="2.2"
        provider-name="Area-51">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -19,19 +19,22 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.area51x" name="[COLOR green]Area 51 X[/COLOR]" version="8.000.000" provider-name="@Nemzzy668 / Kong">
+<addon id="plugin.video.Area51Gui" name="[COLOR lime]Area 51 Gui Edition[/COLOR]" version="1.00.000" provider-name="Ghost">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.addon.common" version="2.0.0" />
-    <import addon="pvr.iptvsimple" />
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">[COLOR green]Area 51 X[/COLOR]</summary>
+    <summary lang="en">[COLOR lime]Area 51 Gui Edition Made By A Ghost[/COLOR]</summary>
     <description lang="en">A Kodi Bassed MultiMedia Addon.</description>
     <platform>all</platform>
+	<assets>
+        <icon>icon.gif</icon>
+        <fanart>fanart.jpg</fanart>
+    </assets>
   </extension>
 </addon>
 
