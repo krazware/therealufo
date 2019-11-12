@@ -2,7 +2,7 @@
 <addons>
 <addon id="plugin.video.area51"
        name="[COLOR lightgreen]Area-51 IPTV[/COLOR]"
-       version="2.2"
+       version="2.3"
        provider-name="Area-51">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -38,45 +38,85 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.Galaxy" version="1.2.0" name="[COLOR gray]Galaxy[/COLOR]" provider-name="[COLOR lightblue]0XPAHA[/COLOR]">
-	<requires>
-		<import addon="xbmc.python" version="2.19.0" />
-		<import addon="script.module.Galaxy" />
-		<import addon="script.Galaxy.artwork" version="1.0.0" />
-		<import addon="script.Galaxy.metadata" version="1.0.0" />
-		<import addon="script.module.resolveurl" />
-		<import addon="script.module.requests" />
-		<import addon="script.module.metahandler" version="1.0.0" />
-        <import addon="plugin.video.youtube"/>
-	</requires>
-	<extension point="xbmc.python.pluginsource" library="default.py">
-		<provides>video</provides>
-        <provides>audio</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">[COLOR gray]Galaxy[/COLOR]</summary>
-		<description>[COLOR yellow]PLEASE READ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!![/COLOR][COLOR lightblue]
-  Welcome to the Galaxy addon from Area-51. Please Read and accept the terms below to continue. Galaxy Kodi addon is absolutely legal and only contains links to other websites on the Internet. It does not host or upload any videos, films, or media files. The Galaxy Kodi addon simply aggregates links in a convenient, user-friendly interface. Galaxy is not responsible for the accuracy, compliance, copyright, legality, decency, or any other aspect of the content of others linked sites. If you have any legal issue please contact the appropriate media file owners or host of these sites. Any legal issues regarding the free online TV shows or Movies on this 3rd party Kodi addon should be taken up with the actual file host and providers themselves, as Galaxy is not affiliated with them. All copyrights of TV shows, movies, and videos is reserved by the copyright owner(s). Use Galaxy at your own risk.
-[/COLOR]</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
-The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
-This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.
-</disclaimer>
-		<platform>all</platform>
-		<license>Beerware rev. 42</license>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-    			<screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
-    			<screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
-    			<screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
-    			<screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
-		</assets>
-		<news></news>
-	</extension>
+<addon id="plugin.video.galaxy" version="10.1" name="[B][COLOR ff8037A0]Galaxy[/COLOR][/B]" provider-name="OXPAHA">
+   <requires>
+        <import addon="xbmc.python" version="2.19.0" />
+        <import addon="script.module.galaxy" />
+        <import addon="script.galaxy.artwork" />
+        <import addon="script.galaxy.metadata" />
+		<import addon="plugin.video.SportsDevil"/>
+		<import addon="plugin.video.f4mTester"/>
+		<import addon="repository.jsergio"/>
+        <import addon="script.module.resolveurl" />
+        <import addon="script.module.requests" />
+        <import addon="script.module.metahandler" />
+        <import addon="plugin.video.youtube" />
+		<import addon="repository.openscrapers"/>
+		<import addon="script.module.openscrapers"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="galaxy.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">[B][COLOR ff8037A0]Galaxy[/COLOR][/B]</summary>
+        <description lang="en">This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.The author does not host any of the content in this addon and takes no responsibility for content found.</description>
+        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon. The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation. This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works</disclaimer>
+    <platform>all</platform>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+    </assets>
+    <news></news>
+    </extension>
 </addon>
 
-    <addon id="repository.ufo-repo" name="[COLOR lightgreen]UFO[/COLOR] Repository" version="1.000.000" provider-name="krAZ">
+<addon
+  id="plugin.video.SportsDevil"
+  version="2019.04.22"
+  name="SportsDevil"
+  provider-name="SportsDevil">
+  <requires>
+   <import addon="xbmc.python" version="2.14.0"/>
+   <import addon="script.module.dateutil" />
+   <import addon="script.module.simplejson" />
+   <import addon="script.module.six" />
+   <import addon="script.module.requests" />   
+   <import addon="plugin.video.f4mTester" />
+   <import addon="script.module.slproxy" />
+  </requires>
+  <extension 
+    point="xbmc.python.pluginsource"
+    library="default.py">
+   <provides>video</provides>
+  </extension>
+  <!-- <extension point="xbmc.service" library="service/streamlink_proxy.py" /> -->
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">SportsDevil</summary>
+    <description lang="en">[I]There can only be one.[/I][CR][CR]Unofficial Kodi Addon.</description>
+    <disclaimer lang="en">There can only be one.</disclaimer>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.f4mTester" name="f4mTester" version="2.7.2" provider-name="Shani">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.video.F4mProxy" version="2.7.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>f4mTester</summary>
+        <description></description>
+        <platform>all</platform>
+    </extension>
+</addon>
+
+<addon id="repository.ufo-repo" name="[COLOR lightgreen]UFO[/COLOR] Repository" version="1.000.000" provider-name="krAZ">
         <requires>
             <import addon="xbmc.addon" version="12.0.0"/>
         </requires>
@@ -93,48 +133,103 @@ This is a Non-profit resource, organized solely for educational purposes which i
     </extension>
 </addon>
 
-<addon id="script.Galaxy.artwork" version="1.0.5" name="[COLOR gray]Galaxy[/COLOR] Artwork" provider-name="[COLOR white]The Martian[/COLOR]">
-	<requires>
-		<import addon="xbmc.python" version="2.19.0"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
+<addon id="repository.openscrapers" name="OpenScrapers Repository" version="1.0" provider-name="A4K">
+	<extension point="xbmc.addon.repository" name="OpenScrapers Repository">
+		<dir>
+            <info compressed="false">https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/a4k-openproject/repository.openscrapers/master/zips/</datadir>
+        </dir>
+	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>Themes for the Galaxy Addon</summary>
-		<description>Artwork Module for the Galaxy Addon</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
-The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
-This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-        <license>Beerware rev. 42</license>
+		<summary>OpenScrapers Repository</summary>
+		<description>The official repo for OpenScrapers!.</description>
+		<disclaimer></disclaimer>
 		<platform>all</platform>
 	</extension>
 </addon>
 
-<addon id="script.Galaxy.metadata" version="1.0.7" name="[COLOR gray]Galaxy Metadata[/COLOR]" provider-name="[COLOR white]The Martian[/COLOR]">
-	<requires>
-		<import addon="xbmc.python" version="2.19.0"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
+<addon id="repository.jsergio" name="jsergio repo" version="1.0.4" provider-name="jsergio">
+	<extension point="xbmc.addon.repository" name="jsergio repo">
+        <info compressed="false">https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/jsergio123/zips/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/jsergio123/zips/master/</datadir>
+	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>Metadata for the Galaxy Addon</summary>
-		<description>Metadata for Galaxy are maintained separately to make distribution of the the addon itself easier/faster.</description>
+		<summary>Repo for jsergio Add-ons</summary>
+		<description>Repo for jsergio Add-ons</description>
 		<platform>all</platform>
 	</extension>
 </addon>
 
-<addon id="script.module.Galaxy" name="[COLOR gray]Galaxy Module[/COLOR]" version="1.2.4" provider-name="[COLOR gray]The Martian[/COLOR]">
-	<requires>
-		<import addon="xbmc.python" version="2.1.0" />
-	</requires>
-	<extension point="xbmc.python.module" library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<platform>all</platform>
-		<summary lang="en">Galaxy</summary>
-		<description>Covenant Fork from Echo/Colossus era with The Martian's updates and new code.</description>
-        <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.
-The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.
-This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
-        <license>Beerware rev. 42</license>
-	</extension>
+<addon id="script.galaxy.artwork" version="10.1" name="[B][COLOR ff8037A0]Galaxy [/COLOR][/B][B][COLOR ffBCBCBC]Artwork Addon[/COLOR][/B]" provider-name="OXPAHA">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+    <summary lang="en">[B][COLOR ff8037A0]Galaxy [/COLOR][/B][B][COLOR ffBCBCBC]Artwork Addon[/COLOR][/B]</summary>
+    <description lang="en">This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.The author does not host any of the content in this addon and takes no responsibility for content found.</description>
+    <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon. The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation. This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works</disclaimer>
+    <platform>all</platform>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart></fanart>
+        <screenshot></screenshot>
+        <screenshot></screenshot>
+        <screenshot></screenshot>
+    </assets>
+    <news></news>
+    </extension>
+</addon>
+
+<addon id="script.galaxy.metadata" version="10.1" name="[B][COLOR ff8037A0]Galaxy [/COLOR][/B][B][COLOR ffBCBCBC]Metadata Addon[/COLOR][/B]" provider-name="OXPAHA">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">[B][COLOR ff8037A0]Galaxy [/COLOR][/B][B][COLOR ffBCBCBC]Metadata Addon[/COLOR][/B]</summary>
+    <description lang="en">This addon does not form part of the Kodi Media Centre. Please do not seek assistance with this addon from any of the Official Kodi Support Channels.The author does not host any of the content in this addon and takes no responsibility for content found.</description>
+    <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon. The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation. This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works</disclaimer>
+    <platform>all</platform>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart></fanart>
+        <screenshot></screenshot>
+        <screenshot></screenshot>
+        <screenshot></screenshot>
+    </assets>
+    <news></news>
+    </extension>
+</addon>
+
+<addon id="script.module.galaxy" version="10.2" name="[B][COLOR ff8037A0]Galaxy [/COLOR][/B][B][COLOR ffBCBCBC]Module Addon[/COLOR][/B]" provider-name="OXPAHA">
+    <requires>
+        <import addon="xbmc.python" version="2.19.0" />
+        <import addon="script.module.beautifulsoup4" />
+        <import addon="script.module.dateutil" />
+        <import addon="script.module.futures" />
+        <import addon="script.module.requests" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+    <summary lang="en">[B][COLOR ff8037A0]Galaxy [/COLOR][COLOR ff8037A0]Module[/COLOR][/B] is a free portal for it freaks to see the best stuff.</summary>
+   <description>Scrape common video host for URL's to be playable in Kodi, simplifying addon development of video plugins requiring multi video hosts.</description>
+                <disclaimer lang="en">The author is not responsible for the use of this addon. The author is not responsible for the content found using this addon. The author does not host or own any content found within this addon.[CR]The author is in no way affiliated with Kodi, Team Kodi, or the XBMC Foundation.[CR]This is a Non-profit resource, organized solely for educational purposes which is protected under the Fair-Use doctrine of the Copyright Act, Specifically section 107, which does promote freedom of expression, by permitting the unlicensed use of copyright-protected works.</disclaimer>
+    <platform>all</platform>
+    <license>GNU GENERAL PUBLIC LICENSE. Version 3, 29 June 2007</license>
+    <assets>
+        <icon>icon.png</icon>
+        <fanart></fanart>
+        <screenshot></screenshot>
+        <screenshot></screenshot>
+        <screenshot></screenshot>
+    </assets>
+    <news></news>
+    </extension>
 </addon>
 
 <addon id="script.module.metahandler"
